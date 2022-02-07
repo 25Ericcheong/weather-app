@@ -1,13 +1,10 @@
-import './App.css';
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>
-        Test
-      </h1>
-    </div>
-  );
+  const name = "Weather App";
+  const element = <h1>Personal {name}</h1>;
+
+  return <div className="App">{element}</div>;
 }
 
 export default App;
