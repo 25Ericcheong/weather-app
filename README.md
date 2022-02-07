@@ -34,3 +34,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Personal Logs
 Used to confirm/phrase certain concepts for personal understanding and future referencee if needed
+- Prop input values should never be modified (read-only). Component functions should be pure.
