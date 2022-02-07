@@ -7,7 +7,7 @@ import Time from "./Time.js";
 setInterval(() => {
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <App appName="Weather App" />
       <Time />
     </React.StrictMode>,
     document.getElementById("root")
