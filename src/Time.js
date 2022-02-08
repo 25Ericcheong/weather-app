@@ -8,7 +8,7 @@ class Time extends React.Component {
   }
 
   componentDidMount() {
-    // does not participate in data flow
+    // does not participate in data flow and is called continuously every second after component has been rendered
     this.timerID = setInterval(() => {
       this.tick();
     }, 1000);
@@ -25,23 +25,8 @@ class Time extends React.Component {
   }
 
   render() {
-    return (
-      <section className="App">
-        <h2>It is {this.state.date.toLocaleTimeString()}</h2>
-      </section>
-    );
+    return <h2>It is {this.state.date.toLocaleTimeString()}</h2>;
   }
 }
-
-// function Time() {
-
-//   const element = (
-//     <div>
-//       <h2>It is {currentTime.date.toLocaleTimeString()}</h2>
-//     </div>
-//   );
-
-//   return <div className="App">{element}</div>;
-// }
 
 export default Time;

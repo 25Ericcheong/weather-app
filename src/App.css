@@ -1,3 +1,21 @@
-.App {
+.app {
   text-align: center;
+}
+
+.dark {
+  color: white;
+  background-color: black;
+}
+
+.normal {
+  color: black;
+  background-color: white;
+}
+
+.dark button {
+  border-color: white;
+}
+
+.normal button {
+  border-color: black;
 }
