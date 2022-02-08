@@ -25,7 +25,7 @@ function Weather() {
 
   function getWeatherData(lat, long) {
     fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${exclude}&appid=${api}`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${exclude}&appid=${api}&units=metric`
     )
       .then((res) => res.json())
       .then((result) => {
