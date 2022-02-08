@@ -9,7 +9,7 @@ function formatName(user) {
 
 function App(props) {
   const [mode, setMode] = useState("normal");
-  const [status, changeStatus] = useState("Dark Mode");
+  const [status, setStatus] = useState("Dark Mode");
 
   const user = {
     firstName: "Eric",
@@ -18,7 +18,7 @@ function App(props) {
 
   let changeMode = () => {
     setMode((mode) => (mode === "normal" ? "dark" : "normal"));
-    changeStatus((status) =>
+    setStatus((status) =>
       status === "Dark Mode" ? "Normal Mode" : "Dark Mode"
     );
   };
