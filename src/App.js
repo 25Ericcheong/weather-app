@@ -1,5 +1,6 @@
-import "./App.css";
+import "./style.css";
 import Time from "./Time.js";
+import { Weather } from "./Weather.js";
 import React, { useState } from "react";
 
 function formatName(user) {
@@ -30,6 +31,7 @@ function App(props) {
       <h1>{formatName(user)}</h1>
       <h2>{props.appName}</h2>
       <Time buttonMode={mode} />
+      <Weather />
     </section>
   );
 }

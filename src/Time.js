@@ -1,4 +1,4 @@
-import "./App.css";
+import "./style.css";
 import React from "react";
 
 class Time extends React.Component {
