@@ -35,6 +35,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # Personal Logs
 Used to confirm/phrase certain concepts for personal understanding and future referencee if needed
 - Prop input values should never be modified (read-only). Component functions should be pure
-- componentDidMount (will run after component has been rendered to the DOM) for setting up - if setState is involved, render method will be call as well to update content (applicable for class component) and componentWillUnmount for cleaning after it is not used for freeing up resources. These are life cycle methods
+- componentDidMount (will run after component has been rendered to the DOM once only) for setting up - if setState is involved, render method will be call as well to update content (applicable for class component) and componentWillUnmount for cleaning after it is not used for freeing up resources. These are life cycle methods
 - Props and state values may be updated asynchronously, so should not rely on their values for next value. Solution is to use second form of setState that passes a function instead of object
 - Data flows down (parent to child component) and compoent will not know where it came from or manually typed
+- If want to prevent a specific component from being rendered with conditional rendering, can return null before render method in class component as well
+- useEffect is a combination of componentDidMount, componentWillUnmount and etc (a few more)
