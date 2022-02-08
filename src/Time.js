@@ -4,18 +4,23 @@ import React from "react";
 class Time extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { date: new Date() };
+    this.state = {
+      date: new Date(),
+      timePaused: false,
+    };
+
+    this.timeToggled = this.timeToggled.bind(this);
   }
 
   componentDidMount() {
     // does not participate in data flow and is called continuously every second after component has been rendered
-    this.timerID = setInterval(() => {
+    this.timeID = setInterval(() => {
       this.tick();
     }, 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerID);
+    clearInterval(this.timeID);
   }
 
   tick() {
@@ -24,8 +29,30 @@ class Time extends React.Component {
     });
   }
 
+  // used stop time from ticking and resuming time to current time
+  timeToggled() {
+    if (!this.state.timePaused) {
+      clearInterval(this.timeID);
+    } else {
+      this.timeID = setInterval(() => {
+        this.tick();
+      }, 1000);
+    }
+
+    this.setState((prevState) => ({
+      timePaused: !prevState.timePaused,
+    }));
+  }
+
   render() {
-    return <h2>It is {this.state.date.toLocaleTimeString()}</h2>;
+    return (
+      <section>
+        <h2>It is {this.state.date.toLocaleTimeString()}</h2>
+        <button onClick={this.timeToggled} className={this.props.buttonMode}>
+          Toggle Time
+        </button>
+      </section>
+    );
   }
 }
 
