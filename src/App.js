@@ -17,6 +17,9 @@ function App(props) {
 
   let changeMode = () => {
     setMode((mode) => (mode === "normal" ? "dark" : "normal"));
+    changeStatus((status) =>
+      status === "Dark Mode" ? "Normal Mode" : "Dark Mode"
+    );
   };
 
   return (
