@@ -40,4 +40,4 @@ Used to confirm/phrase certain concepts for personal understanding and future re
 - Data flows down (parent to child component) and compoent will not know where it came from or manually typed
 - If want to prevent a specific component from being rendered with conditional rendering, can return null before render method in class component as well
 - useEffect is a combination of componentDidMount, componentWillUnmount and etc (a few more)
-- When utilizing useEffect, can include [variablesToWatch] and this variable will be monitored within the useEffect block. This can be used for states that needs to continuously be observed when app is running
+- When utilizing useEffect, can include [variablesToWatch] as a second argument and this variable will be monitored within the useEffect block. This can be used for states that needs to continuously be observed when app is running
