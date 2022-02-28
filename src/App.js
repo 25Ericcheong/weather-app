@@ -30,7 +30,7 @@ function App(props) {
       </button>
       <h1>{formatName(user)}</h1>
       <h2>{props.appName}</h2>
-      <Time />
+      <Time buttonMode={mode} />
       <Weather />
     </section>
   );
