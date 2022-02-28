@@ -57,14 +57,19 @@ function Weather() {
         const ms = new Date(element.dt * 1000);
         localDate.setTime(ms);
         const timezoneShifted = localDate.toLocaleString();
+        const forecastedWeather = element.weather[0].main;
+        let describeWeather = element.weather[0].description;
 
         return (
-          <section key={element.weather[0].id}>
+          <div key={element.weather[0].id} className="spacing">
             {daysOfWeek[localDate.getDay()]} (
             {localDate.toLocaleDateString("en-UK")})
-            <p>Forecasted: {element.weather[0].main}</p>
-            <p>Description: {element.weather[0].description}</p>
-          </section>
+            <p>Forecasted: {forecastedWeather}</p>
+            <p>
+              Description:{" "}
+              {describeWeather[0].toUpperCase() + describeWeather.slice(1)}
+            </p>
+          </div>
         );
       });
     }
