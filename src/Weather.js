@@ -37,17 +37,35 @@ function Weather() {
 
   function displayDailyData() {
     let elements;
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
     if (data) {
       const timezone = data.timezone;
       const localDate = new Date();
 
       console.log(data.daily);
       elements = data.daily.map((element) => {
+        // used to convert to local time zone
         const ms = new Date(element.dt * 1000);
         localDate.setTime(ms);
         const timezoneShifted = localDate.toLocaleString();
 
-        return <p>{timezoneShifted}</p>;
+        return (
+          <section key={element.weather[0].id}>
+            {daysOfWeek[localDate.getDay()]} (
+            {localDate.toLocaleDateString("en-UK")})
+            <p>Forecasted: {element.weather[0].main}</p>
+            <p>Description: {element.weather[0].description}</p>
+          </section>
+        );
       });
     }
 
