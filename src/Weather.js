@@ -7,7 +7,7 @@ function Weather() {
 
   // const [error, setError] = useState(null);
   // const [isLoaded, setIsLoaded] = useState(false);
-  const [content, setContent] = useState([]);
+  const [data, setData] = useState();
   const [lat, setLat] = useState(0);
   const [long, setLong] = useState(0);
 
@@ -29,13 +29,33 @@ function Weather() {
     )
       .then((res) => res.json())
       .then((result) => {
-        setContent(result);
+        setData(result);
         console.log(result);
-        console.log(result.daily);
+        // console.log(result.daily);
       });
   }
 
-  return <section className="app"></section>;
+  function displayDailyData() {
+    let elements;
+    if (data) {
+      const timezone = data.timezone;
+      const localDate = new Date();
+
+      console.log(data.daily);
+      elements = data.daily.map((element) => {
+        const ms = new Date(element.dt * 1000);
+        localDate.setTime(ms);
+        const timezoneShifted = localDate.toLocaleString();
+
+        return <p>{timezoneShifted}</p>;
+      });
+    }
+
+    console.log(elements);
+    return elements;
+  }
+
+  return <section className="app">{displayDailyData()}</section>;
 }
 
 export { Weather };
