@@ -2,11 +2,34 @@ import "./style.css";
 import React, { useState, useEffect } from "react";
 
 function Time() {
+  const [date, setDate] = useState(new Date());
+
+  // actively updates time on page
+  useEffect(() => {
+    const id = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(id);
+    };
+  });
+
+  function partOfDay(time) {
+    if (time >= 6 && time <= 12) {
+      return "Morning";
+    } else if (time >= 12 && time <= 18) {
+      return "Afternoon";
+    } else {
+      return "Night";
+    }
+  }
+
   return (
     <section>
-      {/* <h2>
-        It is {date.toLocaleTimeString()} in the {partOfDay}
-      </h2> */}
+      <h2>
+        {date.toLocaleTimeString()} {partOfDay(date.getHours())}
+      </h2>
       {/* <button onClick={this.timeToggled} className={this.props.buttonMode}>
         Toggle Time
       </button> */}
