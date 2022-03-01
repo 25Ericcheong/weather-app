@@ -26,11 +26,12 @@ function App(props) {
 
   return (
     <section className={`app ${mode}`}>
-      <button onClick={changeMode} className={mode}>
-        {status}
-      </button>
-      <h1>{formatName(user)}</h1>
-      <h2>{props.appName}</h2>
+      <Header
+        appName={props.appName}
+        modeFunction={changeMode}
+        backgroundStatus={mode}
+        buttonStatus={status}
+      />
       <Time buttonMode={mode} />
       <Weather />
     </section>
