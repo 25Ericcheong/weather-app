@@ -37,9 +37,9 @@ function Time(props) {
 
   return (
     <section>
-      <h2>
+      <h3>
         {date.toLocaleTimeString()} {partOfDay(date.getHours())}
-      </h2>
+      </h3>
       <button onClick={timeToggled} className={props.buttonMode}>
         Toggle Time
       </button>

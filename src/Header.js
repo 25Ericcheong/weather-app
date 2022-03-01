@@ -2,7 +2,7 @@ import "./style.css";
 import React from "react";
 
 function formatName(user) {
-  return `This is ${user.firstName} ${user.lastName}'s first react project!`;
+  return `This is ${user.firstName} ${user.lastName}'s first React project!`;
 }
 
 function Header(props) {
@@ -18,7 +18,7 @@ function Header(props) {
           {props.buttonStatus}
         </button>
       </div>
-      <h1>{formatName(user)}</h1>
+      <h2>{formatName(user)}</h2>
       <h2>{props.appName}</h2>
     </section>
   );
