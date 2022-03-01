@@ -3,8 +3,17 @@
   margin: 0;
 }
 
-.spacing {
+.standard-spacing {
+  margin: 0 1em 0.5em 1em;
   padding: 1em;
+}
+
+.right-align {
+  display: flex;
+  justify-content: right;
+}
+
+.left-align {
   text-align: left;
 }
 

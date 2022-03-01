@@ -12,10 +12,12 @@ function Header(props) {
   };
 
   return (
-    <section>
-      <button onClick={props.modeFunction} className={props.backgroundStatus}>
-        {props.buttonStatus}
-      </button>
+    <section className="standard-spacing">
+      <div className="right-align">
+        <button onClick={props.modeFunction} className={props.backgroundStatus}>
+          {props.buttonStatus}
+        </button>
+      </div>
       <h1>{formatName(user)}</h1>
       <h2>{props.appName}</h2>
     </section>

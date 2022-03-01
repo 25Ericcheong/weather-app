@@ -61,7 +61,10 @@ function Weather() {
         let describeWeather = element.weather[0].description;
 
         return (
-          <div key={element.weather[0].id} className="spacing">
+          <div
+            key={element.weather[0].id}
+            className="left-align standard-spacing"
+          >
             {daysOfWeek[localDate.getDay()]} (
             {localDate.toLocaleDateString("en-UK")})
             <p>Forecasted: {forecastedWeather}</p>
