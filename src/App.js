@@ -1,6 +1,7 @@
 import "./style.css";
 import Time from "./Time.js";
 import { Weather } from "./Weather.js";
+import { Header } from "./Header.js";
 import React, { useState } from "react";
 
 function formatName(user) {
